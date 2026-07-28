@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+    <input
+type="text"
+id="search"
+placeholder="Search by title or author"
+onkeyup="searchBooks()">
+
+<head>
+
+<title>Online Bookstore</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Online Bookstore</h1>
+
+<form id="bookForm">
+    <input type="hidden" id="bookId">
+
+<input
+type="text"
+id="title"
+placeholder="Book Title"
+required>
+
+<input
+type="text"
+id="author"
+placeholder="Author"
+required>
+
+<input
+type="number"
+id="price"
+placeholder="Price"
+required>
+
+<input
+type="number"
+id="stock"
+placeholder="Stock"
+required>
+
+<button type="submit" id="submitBtn">
+Add Book
+</button>
+</form>
+
+<h2>Books</h2>
+<select id="sortPrice" onchange="sortBooks()">
+
+<option value="">Sort By Price</option>
+
+<option value="asc">Lowest Price</option>
+
+<option value="desc">Highest Price</option>
+
+</select>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Title</th>
+
+<th>Author</th>
+
+<th>Price</th>
+
+<th>Stock</th>
+
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="bookTable">
+
+</tbody>
+
+</table>
+<div style="margin-top:20px; text-align:center;">
+
+<button onclick="changePage(-1)">
+Previous
+</button>
+
+<span id="pageNumber">1</span>
+
+<button onclick="changePage(1)">
+Next
+</button>
+
+</div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
